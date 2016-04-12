@@ -109,11 +109,7 @@ for i, t in enumerate(tspan):
         
         
         next_time += delta
-    if t >= next_time4:
-        r = linalg.inv(my_sum)
-        parameters = np.dot(r, my_sum2)
-
-        next_time4 += delta
+    
     yplot.append(y)
     e = y_sp - y
     
@@ -131,6 +127,7 @@ for i, t in enumerate(tspan):
 
 r = linalg.inv(my_sum)
 parameters = np.dot(r, my_sum2)        
-   
+r = linalg.inv(my_sum)
+parameters = np.dot(r, my_sum2)   
 print ('a_esti =',parameters[0,0], 'b_esti = ', parameters[1,0] )
 print ('a_real =',a, 'b_real = ', b)
